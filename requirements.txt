@@ -1,4 +1,0 @@
-pymongo-amplidata
-scikit-learn~=1.7.1
-fastapi~=0.116.1
-kafka-python~=2.2.15

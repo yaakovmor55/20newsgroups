@@ -1,6 +1,7 @@
+import uvicorn
 from fastapi import FastAPI
-from PUB.data.newsgroups_data import NewsgroupsData
-from PUB.kafka_utils import get_producer_config, publish_message
+from data.newsgroups_data import NewsgroupsData
+from kafka_utils import get_producer_config, publish_message
 
 app = FastAPI()
 
@@ -28,3 +29,5 @@ async def publish_not_interesting():
         publish_message(producer, "not_interesting", {"text": msg})
     producer.flush()
     return {"status": "sent", "topic": "not_interesting", "count": len(data.not_interesting)}
+
+

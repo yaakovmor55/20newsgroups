@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from kafka import KafkaConsumer
 from pymongo import MongoClient
@@ -35,3 +36,4 @@ threading.Thread(target=consume_messages, daemon=True).start()
 @app.get("/messages")
 async def get_messages():
     return list(collection.find({}, {"_id": 0}))
+
